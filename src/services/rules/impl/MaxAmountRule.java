@@ -1,11 +1,12 @@
-package rules.impl;
+package services.rules.impl;
 
 
 import java.util.Optional;
 
 import models.Expense;
-import rules.ExpenseRule;
-import rules.Violation;
+import services.rules.ExpenseRule;
+import services.rules.Violation;
+
 
 public class MaxAmountRule implements ExpenseRule {
 
@@ -18,14 +19,14 @@ public class MaxAmountRule implements ExpenseRule {
     @Override
     public Optional<Violation> check(Expense e) {
         if (e.getAmountUsd() > maxAmount) {
-            return Optional.of(Violation.of("Expense amount is greater than the max amount"));
+            return Optional.of(Violation.of("Expense amount is greater than the max amount" + " id:" + e.getExpenseId() ));
         }
 
         return Optional.empty();
     }
 }
 
-/**
+/*
  *
  * class ParseRule {
  *

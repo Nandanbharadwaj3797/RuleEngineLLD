@@ -1,4 +1,4 @@
-package rules;
+package services.rules;
 
 import models.Expense;
 
@@ -7,5 +7,5 @@ import java.util.Optional;
 
 
 public interface ExpenseRule {
-    Optional<Violation> check(Expense e);
+    Optional<services.rules.Violation> check(Expense e);
 }
